@@ -1,0 +1,25 @@
+class Solution {
+public:
+    // Helper function to check if a string is a palindrome
+    bool ispolin(string s) {
+        // Create a temporary copy of s to reverse
+        string tem = s;
+        // Reverse the temporary string
+        reverse(tem.begin(), tem.end());
+        // Compare the reversed string with the original string
+        return tem == s;
+    }
+    
+    // Function to find the first palindromic string in a vector of words
+    string firstPalindrome(vector<string>& words) {
+        // Iterate through each word in the vector
+        for (string i : words) {
+            // If the word is a palindrome, return it immediately
+            if (ispolin(i)) {
+                return i;
+            }
+        }
+        // If no palindrome is found, return an empty string
+        return "";
+    }
+};
